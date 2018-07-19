@@ -30,20 +30,17 @@ pipeline {
                     }
 
                     build job: 'deploy-to-prod'
-
-                    post {
-                        success {
-                            echo 'Code deployed to prod'
-                        }
-
-                        failure {
-                            /*or send email*/
-                            echo 'Prod deployment failed'
-                        }
-                    }
                 }
+                 post {
+                     success {
+                        echo 'Code deployed to prod'
+                     }
 
-
+                     failure {
+                        /*or send email*/
+                        echo 'Prod deployment failed'
+                     }
+                 }
             }
     }
 }
