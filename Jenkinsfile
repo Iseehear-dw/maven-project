@@ -14,5 +14,12 @@ pipeline {
                     }
                 }
             }
+
+            stage('Deploy to Staging') {
+                steps {
+                    /*this is the project name, we created in jenkins web ui*/
+                    build job: 'deploy-to-staging'
+                }
+            }
     }
 }
